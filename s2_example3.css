@@ -16,9 +16,9 @@ body { /* We can style any HTML element by using its name - here we're styling t
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     font-size: 16px;
     color: #333;
-    line-height: 1.6;
+    line-height: 1.2;
     /* we want a white page, that's centered and not too wide */
-    background-color: #fff;
+    background-color: rgb(255, 255, 255);
     margin:0 auto;
     max-width: min(80vw, 1200px);
     padding-top: 60px;
@@ -55,7 +55,7 @@ body { /* We can style any HTML element by using its name - here we're styling t
 
 section {
     /* Add a thick black top border to each section */
-    border-top: 4px solid #000;
+    border-top: 4px solid #af0505;
     display: flex;
     align-items: flex-start;
     gap: 20px; /* Adjust the gap between the text and the chart as needed */
@@ -92,3 +92,7 @@ section figure {
     height: auto;
   }
   
+  #section1 {
+    min-height: 1200px !important;
+    align-items: flex-start;
+  }
