@@ -1,0 +1,52 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Global Inflation",
+    "subtitle": ["2022 Inflation %", "Source: World Data, 2024", ""],
+    "fontSize": 16,
+    "subtitleFontSize": 12,
+    "subtitleFontWeight": "lighter",
+    "anchor": "middle"
+  },
+  "description": "2021 World Bank data, GDP per capita in current international $ and converted to purchasing power parity. Grey countries have missing data.",
+  "data": {
+    "url": "https://raw.githubusercontent.com/EconomicsObservatory/courses/main/datasets/advanced/map_world.geojson",
+    "format": {"property": "features"}
+  },
+  "width": 600,
+  "height": 330,
+  "transform": [
+    {
+      "lookup": "properties.ISO",
+      "from": {
+        "key": "ISO",
+        "fields": ["Country/Region", "ISO", "2022"],
+        "data": {
+          "url": "https://raw.githubusercontent.com/MREEDECO/MREEDECO.github.io/main/inflation%20data.csv"
+        }
+      }
+    }
+  ],
+  "projection": {
+    "type": "naturalEarth1",
+    "scale": 125,
+    "translate": [285, 180]
+  },
+  "layer": [
+    {
+      "mark": {"type": "geoshape", "stroke": "white", "strokeWidth": 0.3},
+      "encoding": {"color": {"value": "grey"}}
+    },
+    {
+      "mark": {"type": "geoshape", "stroke": "white", "strokeWidth": 0.3},
+      "encoding": {
+        "color": {
+          "field": "2022",
+          "scale": {"type": "log"},
+          "type": "quantitative"
+        }
+      }
+    }
+  ],
+  "config": {}
+}
