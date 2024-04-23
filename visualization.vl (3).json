@@ -1,0 +1,69 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Wetherspoons Guinness Prices",
+    "subtitle": ["1 Pint, Excluding Airports", ""],
+    "subtitleFontWeight": "lighter",
+    "align": "left",
+    "color": "white",
+    "subtitleColor": "rgb(200,200,200)",
+    "anchor": "start",
+    "fontSize": 15,
+    "subtitleFontSize": 13
+  },
+  "background": "rgb(25,25,25)",
+  "width": "container",
+  "height": 500,
+  "data": {
+    "url": "https://raw.githubusercontent.com/FM-ds/Festival_Display/main/data/cleaned/lowpoly_LAD.json",
+    "format": {"type": "topojson"}
+  },
+  "projection": {"type": "naturalEarth1"},
+  "layer": [
+    {
+      "mark": {
+        "opacity": 1,
+        "type": "geoshape",
+        "fill": "rgb(50,50,50)",
+        "stroke": "gray",
+        "strokeWidth": 0.2
+      }
+    },
+    {
+      "data": {
+        "url": "https://raw.githubusercontent.com/FM-ds/FM-ds.github.io/main/prices_locations.csv"
+      },
+      "projection": {"type": "naturalEarth1"},
+      "transform": [{"filter": "datum.isAirport == 'False'"}],
+      "mark": {"type": "circle"},
+      "encoding": {
+        "opacity": {"value": 1},
+        "longitude": {"field": "long", "type": "quantitative"},
+        "latitude": {"field": "lat", "type": "quantitative"},
+        "size": {"value": 15},
+        "tooltip": [
+          {"field": "name"},
+          {"field": "town"},
+          {"field": "guiness_price", "title": "price"}
+        ],
+        "color": {
+          "field": "guiness_price",
+          "type": "quantitative",
+          "legend": {
+            "labelExpr": "datum.value > 0 ? '£'+format(datum.value, '.3r') : ''",
+            "title": null,
+            "labelFontWeight": "lighter",
+            "orient": "right",
+            "direction": "vertical",
+            "gradientLength": 200,
+            "labelColor": "rgb(200,200,200)",
+            "labelFontSize": 10
+          },
+          "scale": {"scheme": "turbo", "reverse": false, "type": "quantize"}
+        }
+      }
+    }
+  ],
+  "autosize": {"type": "pad", "contains": "padding", "resize": true},
+  "config": {}
+}
