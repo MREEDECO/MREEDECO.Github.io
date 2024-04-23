@@ -41,56 +41,56 @@
     </h1>
     <p style="margin-top: 0px; color: rgb(0, 2, 110)">
         <!-- we're setting the margin to 0px so the header and authour name are close together -->
-        Your Name | <a href="https://www.linkedin.com/in/MaxReed/">LinkedIn</a> | <a
-            href="https://www.github.com/FM-ds">GitHub</a>
+        Your Name | <a href="https://www.linkedin.com/in/Max-Reed1/">LinkedIn</a> | <a
+            href="https://github.com/MREEDECO">GitHub</a>
     </p>
     <h3 class="small"> <!-- We have added a class to the header called "small" which we can use to style it in the CSS -->
-        This HTML file provides a simple template for a portfolio page. It contains a header, a few sections, and a few charts. This header can act as a summary for your page.
+        This HTML file provides an overview of some inflation data.
     </h3>
 
     <!-- We're organising the page into sections, with each section containing a chart, title and a description -->
     <section>
-        <div class="chart-description" id="section1">
-            <h2>Section 1: Real GDP per Capita</h2>
-            <p> <!-- This is a paragraph, it's the main way to display text on a web page -->
-                We've organised the page into sections, with each section containing a chart, title and a description. Here, we can describe the chart and give some context.
-                As a first example, we're using the basic chart from the previous session.
-            </p>
-        </div>
-        <figure id="Location1"></figure> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
+        
         
     </section>
-
-    <section>
-        <div class="chart-description"> <!-- we are grouping the title and description together so we can style them together -->
-            <h2>Section 2: Another Chart</h2>
-            <p> <!-- This is a paragraph, it's the main way to display text on a web page -->
-                This is a more advanced chart. We'll cover charts like this in more detail later today. Don't worry if you don't understand it yet.
-                Feel free to replace both charts with your own examples.
-            </p>
+    <div class="grid-container">
+        <div class="grid-item">Section 1
+            <div class="chart-description" id="section1">
+                <h2>World Inflation in 2022</h2>
+                <p> <!-- This is a paragraph, it's the main way to display text on a web page -->
+                    This map shows the 2022 inflation data in different countries using data from www.worlddata.info
+                </p>
+            </div>
+            <figure id="Location1"></figure> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
         </div>
-        <figure id="Location2"></figure> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
-    </section>
-
-    <section>
-      <div class="chart-description"> <!-- we are grouping the title and description together so we can style them together -->
-          <h2>Section 3: More Charts</h2>
-          <p> <!-- This is a paragraph, it's the main way to display text on a web page -->
-              test test
-          </p>
+        <div class="grid-item">Section 2
+            <div class="chart-description"> <!-- we are grouping the title and description together so we can style them together -->
+                <h2>World GDP</h2>
+                <p> <!-- This is a paragraph, it's the main way to display text on a web page -->
+                    This is a map of global GDP
+                </p>
+            </div>
+            <figure id="Location2"></figure> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
+        </div>
+        <div class="grid-item">Section 3
+            <div class="chart-description"> <!-- we are grouping the title and description together so we can style them together -->
+                <h2>More Charts</h2>
+                <p> <!-- This is a paragraph, it's the main way to display text on a web page -->
+                    test test
+                </p>
+            </div>
+            <figure id="Location3"></figure> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
+        </div>
+        <div class="grid-item">Section 4
+            <div class="chart-description"> <!-- we are grouping the title and description together so we can style them together -->
+                <h2>More Charts</h2>
+                <p> <!-- This is a paragraph, it's the main way to display text on a web page -->
+                    test
+                </p>
+              </div>
+             <figure id="Location4"></figure> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
+        </div>
       </div>
-      <figure id="Location3"></figure> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
-   </section>
-
-   <section>
-      <div class="chart-description"> <!-- we are grouping the title and description together so we can style them together -->
-        <h2>Section 4: More Charts</h2>
-        <p> <!-- This is a paragraph, it's the main way to display text on a web page -->
-            test
-        </p>
-      </div>
-     <figure id="Location4"></figure> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
-    </section>
 
 
     <!-- Do you want to add more sections? -->
@@ -103,8 +103,8 @@
     <script>
         // This is a comment in JavaScript - it's a different language to HTML and CSS
 
-        var figure_1_spec = "visualization.vl (3).json"; // We're storing the URL of the graph we want to display in a variable
-        var figure_2_spec = "https://raw.githubusercontent.com/EconomicsObservatory/courses/main/2/s2_chart2.json";
+        var figure_1_spec = "World_Inflation_2022.json"; // We're storing the URL of the graph we want to display in a variable
+        var figure_2_spec = "https://raw.githubusercontent.com/EconomicsObservatory/courses/main/4/s4_chart3.json";
         var figure_3_spec = "visualization.vl (2).json";
         var figure_4_spec = "https://raw.githubusercontent.com/RDeconomist/RDeconomist.github.io/main/charts/library/chartLine1.json";
 
