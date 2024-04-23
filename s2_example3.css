@@ -54,11 +54,10 @@ body { /* We can style any HTML element by using its name - here we're styling t
   }
 
 section {
-    /* Add a thick black top border to each section */
-    border-top: 4px solid #af0505;
-    display: flex;
-    align-items: flex-start;
-    gap: 20px; /* Adjust the gap between the text and the chart as needed */
+    display: grid;
+    justify-items: stretch;
+    grid-template-columns: 1fr 1fr;
+    margin: 10px;
 }
 
 section .chart-description {
@@ -75,6 +74,18 @@ section figure {
     /* Additional styles for your figure */
 }
 
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Two columns of equal width */
+  grid-template-rows: 1fr 1fr; /* Two rows of equal height */
+  gap: 10px; /* Space between grid items */
+}
+
+.grid-item {
+  background-color: #f0f0f0; /* Light gray background for visibility */
+  border: 1px solid #ccc; /* Light gray border */
+  padding: 20px; /* Padding inside the grid items */
+  text-align: center; /* Center the text */
   
   /* Links */
   a {
@@ -91,8 +102,7 @@ section figure {
     max-width: 100%;
     height: auto;
   }
-  
-  #section1 {
-    min-height: 1200px !important;
-    align-items: flex-start;
+
+  #chartGrid {
+    display: flex;
   }
